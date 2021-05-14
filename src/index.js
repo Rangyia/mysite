@@ -62,7 +62,6 @@ function App() {
         </Grid>
         <Grid item className="content">
           <MainView />
-          <AboutView />
         </Grid>
       </Grid>
     </ThemeProvider>

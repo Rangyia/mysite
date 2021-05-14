@@ -16,32 +16,28 @@ body {
 
 #root {
   position: relative;
+  background-color: #101010;
   height: 100%;
-  width: 100%;
 }
 
 .container {
   position: relative;
-  height: 100%;
+  width: 100%;
+  background-color: red;
 }
 
 /* ----------- Media Queries ---------- */
 
 /* Mobile */
 @media (max-width: 600px) {
-    #root {
-      background-color: green;
-    }
+   
 }
 
 /* Tablet */
 @media (min-width: 600px) {
-    #root {
-      background-color: yellow;
-    } 
+  
 }
 
 /* Desktop */
 @media (min-width: 960px) {
-    
 }

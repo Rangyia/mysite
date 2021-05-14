@@ -1,0 +1,28 @@
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+}
+
+.landing-text {
+    color: white;
+    margin: 0px 50px;
+}
+
+/* ----- About ----- */
+.about {
+    background-color: #191919;
+}
+
+.about-tabs {
+    background-color: none;
+    z-index: 0;
+    box-shadow: none;
+}
+
+.about-img {
+    border: none;
+    border-radius: 8px;
+    border-color: none;
+}

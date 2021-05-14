@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import { AppBar, Toolbar, Typography, CssBaseline, useScrollTrigger, Fab, Zoom } from '@material-ui/core';
-
+import { AppBar, Toolbar, Grid, Typography, useScrollTrigger, Fab, Zoom } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
+import { Squash as Hamburger } from 'hamburger-react'
+import './styles.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -44,19 +44,60 @@ ScrollTop.propTypes = {
     window: PropTypes.func,
 };
 
+const useHeaderStyles = makeStyles((theme) => ({
+    root: {
+        justifyContent: 'space-around',
+        margin: 0,
+    },
+    grow: {
+        flexGrow: 1
+    },
+    sectionDesktop: {
+        display: 'none',
+        [theme.breakpoints.up('md')]: {
+            display: 'flex',
+        },
+    },
+    sectionMobile: {
+        display: 'flex',
+        [theme.breakpoints.up('md')]: {
+            display: 'none',
+        },
+    }
+}));
+
+
 export default function Header(props) {
+    const classes = useHeaderStyles();
+     
     return (
         <React.Fragment>
-            <CssBaseline />
-            <AppBar>
-                <Toolbar>
-                    <Typography variant="h6">Scroll to see button</Typography>
+            <AppBar className="header" style={{backgroundColor: 'transparent'}}>
+                <Toolbar className={classes.root}>
+                    <Typography color="primary" variant="h6">JESS GRAHAM</Typography>
+                    <div className={classes.grow} />
+                    <div className={classes.sectionDesktop}>
+                        <Grid container spacing={2}>
+                            <Grid item>
+                                <Typography className="half-highlight" color="primary" variant="h6">Projects</Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography className="half-highlight" color="primary" variant="h6">Experience</Typography>
+                            </Grid>
+                            <Grid item>
+                                <Typography className="half-highlight" color="primary" variant="h6">Contact</Typography>
+                            </Grid>
+                        </Grid>
+                    </div>
+                    <div className={classes.sectionMobile}>
+                        <Hamburger distance="sm" easing="ease-in" color={"#1a1a1a"} />
+                    </div>
                 </Toolbar>
             </AppBar>
             <Toolbar id="back-to-top-anchor" />
             <ScrollTop {...props}>
-                <Fab color="primary" size="small" aria-label="scroll back to top">
-                    <KeyboardArrowUpIcon />
+                <Fab color="secondary" size="large" aria-label="scroll back to top">
+                    <ArrowUpwardIcon />
                 </Fab>
             </ScrollTop>
         </React.Fragment>

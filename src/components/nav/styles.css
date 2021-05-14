@@ -1,0 +1,4 @@
+.half-highlight:hover {
+  background: linear-gradient(0deg, rgb(58, 58, 58) 50%, transparent 50%);
+  cursor: pointer;
+}
